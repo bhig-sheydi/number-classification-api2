@@ -48,7 +48,6 @@ function getProperties(num) {
     const properties = [];
     if (isArmstrong(num)) properties.push("armstrong");
     if (num % 2 === 0) properties.push("even");
-    if (isPrime(num)) properties.push("prime");
     if (isPerfect(num)) properties.push("perfect");
     return properties;
 }
