@@ -16,6 +16,9 @@ function getDigitSum(num) {
     return num.toString().split('').reduce((sum, d) => sum + parseInt(d), 0);
 }
 
+
+
+  
 function isPerfect(num) {
     if (num < 2) return false;
     let sum = 1; // 1 is a proper divisor for all numbers > 1
@@ -30,4 +33,4 @@ function isPerfect(num) {
     return sum === num;
 }
 
-module.exports = { isPrime, isArmstrong, getDigitSum, isPerfect };
+module.exports = { isPrime, isArmstrong, getDigitSum, isPerfect, isArmstrong};

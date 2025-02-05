@@ -13,7 +13,7 @@ async function classifyNumber(number) {
         number,
         is_prime: isPrime(number),
         is_perfect: isPerfect(number), 
-        properties,
+        properties: isArmstrong(number),
         digit_sum: getDigitSum(number),
         fun_fact: funFact
     };
