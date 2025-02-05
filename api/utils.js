@@ -57,7 +57,7 @@ function getProperties(num) {
     const properties = [];
     if (isArmstrong(num)) properties.push("armstrong");
     properties.push((num & 1) === 0 ? "even" : "odd"); 
-    if (isPerfect(num)) properties.push("perfect");
+    // if (isPerfect(num)) properties.push("perfect");
     return properties;
 }
 
