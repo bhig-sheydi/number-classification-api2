@@ -6,18 +6,18 @@ function isPrime(num) {
     return true;
 }
 
-function isArmstrong(num) {
-    const digits = num.toString().split('');
-    const power = digits.length;
-    return digits.reduce((sum, d) => sum + Math.pow(parseInt(d), power), 0) === num;
-}
 
 function getDigitSum(num) {
     return num.toString().split('').reduce((sum, d) => sum + parseInt(d), 0);
 }
 
 
-
+isArmstrong = (num) => {
+    const digits = num.toString().split("").map(Number);
+    const power = digits.length;
+    const sum = digits.reduce((acc, digit) => acc + Math.pow(digit, power), 0);
+    return sum === num;
+  };
   
 function isPerfect(num) {
     if (num < 2) return false;
