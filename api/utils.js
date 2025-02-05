@@ -1,27 +1,38 @@
 function isPrime(num) {
     if (num < 2) return false;
-    for (let i = 2; i * i <= num; i++) {
-        if (num % i === 0) return false;
+    if (num === 2 || num === 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
     }
     return true;
 }
 
-
-function getDigitSum(num) {
-    return num.toString().split('').reduce((sum, d) => sum + parseInt(d), 0);
+function isArmstrong(num) {
+    let originalNum = num;
+    let sum = 0;
+    const power = Math.floor(Math.log10(num)) + 1; // Number of digits
+    while (num > 0) {
+        const digit = num % 10;
+        sum += Math.pow(digit, power);
+        num = Math.floor(num / 10);
+    }
+    return sum === originalNum;
 }
 
+function getDigitSum(num) {
+    let sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+    return sum;
+}
 
-isArmstrong = (num) => {
-    const digits = num.toString().split("").map(Number);
-    const power = digits.length;
-    const sum = digits.reduce((acc, digit) => acc + Math.pow(digit, power), 0);
-    return sum === num;
-  };
-  
 function isPerfect(num) {
     if (num < 2) return false;
-    let sum = 1; // 1 is a proper divisor for all numbers > 1
+    if (num % 2 !== 0) return false; // No known odd perfect numbers
+    let sum = 1;
     for (let i = 2; i * i <= num; i++) {
         if (num % i === 0) {
             sum += i;
@@ -33,4 +44,13 @@ function isPerfect(num) {
     return sum === num;
 }
 
-module.exports = { isPrime, isArmstrong, getDigitSum, isPerfect, isArmstrong};
+function getProperties(num) {
+    const properties = [];
+    if (isArmstrong(num)) properties.push("armstrong");
+    if (num % 2 === 0) properties.push("even");
+    if (isPrime(num)) properties.push("prime");
+    if (isPerfect(num)) properties.push("perfect");
+    return properties;
+}
+
+module.exports = { isPrime, isArmstrong, getDigitSum, isPerfect, getProperties };
