@@ -54,7 +54,7 @@ GET /api/classify-number?number=371
 ## Installation & Setup
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/your-username/number-classification-api.git
+git clone https://github.com/bhig-sheydi/number-classification-api2.git
 cd number-classification-api
 ```
 
@@ -67,7 +67,7 @@ npm install
 ```sh
 npm start
 ```
-The server will start on `http://localhost:3000`
+The server will start on `https://number-classification-api2.vercel.app/api/classify-number`
 
 ## Deployment
 ### Deploying to Vercel
@@ -100,10 +100,10 @@ The server will start on `http://localhost:3000`
 Feel free to contribute by submitting issues or pull requests!
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the HNG License.
 
 ---
 
 ### Author
-["Vevakpor Godsanointed"](https://github.com/your-username)
+["Vevakpor Godsanointed"](https://github.com/bhig-sheydi)
 
