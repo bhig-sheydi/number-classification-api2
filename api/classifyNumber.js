@@ -1,4 +1,4 @@
-const { isPrime, isArmstrong, getDigitSum , isPerfect} = require('../api/utils');
+const { isPrime, isArmstrong, getDigitSum , isPerfect, getProperties} = require('../api/utils');
 const fetchFunFact = require('./funFactService');
 
 async function classifyNumber(number) {
@@ -13,7 +13,7 @@ async function classifyNumber(number) {
         number,
         is_prime: isPrime(number),
         is_perfect: isPerfect(number), 
-        properties: isArmstrong(number),
+        properties: getProperties(number),
         digit_sum: getDigitSum(number),
         fun_fact: funFact
     };
